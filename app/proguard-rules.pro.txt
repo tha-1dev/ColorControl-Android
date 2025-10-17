@@ -1,0 +1,34 @@
+# Add project specific ProGuard rules here.
+-keep class com.maassoft.colorcontrol.** { *; }
+-keep class * extends java.lang.annotation.Annotation { *; }
+
+# OkHttp
+-keep class okhttp3.** { *; }
+-keep class okio.** { *; }
+
+# GSON
+-keep class com.google.gson.** { *; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+
+# Bluetooth
+-keep class android.bluetooth.** { *; }
+
+# Keep - Applications. Keep all application classes, along with their 'main'
+# method.
+-keepclasseswithmembers public class * {
+    public static void main(java.lang.String[]);
+}
+
+# Also keep - Enumerations. Keep the special static methods that are required in
+# enumeration classes.
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+# Keep - Native method names.
+-keepclasseswithmembers class * {
+    native <methods>;
+}

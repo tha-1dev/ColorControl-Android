@@ -1,0 +1,45 @@
+📁 app/
+├── 📁 src/main/
+│   ├── 📁 java/com/maassoft/colorcontrol/
+│   │   ├── 📁 activities/
+│   │   │   ├── ✅ MainActivity.java (FIXED)
+│   │   │   ├── ConnectionActivity.java
+│   │   │   ├── ControlActivity.java  
+│   │   │   ├── SetupWizardActivity.java
+│   │   │   └── SettingsActivity.java
+│   │   ├── 📁 controllers/
+│   │   │   ├── EnhancedLgController.java
+│   │   │   ├── EnhancedSamsungController.java
+│   │   │   └── UniversalTvWaker.java
+│   │   ├── 📁 network/
+│   │   │   ├── ✅ RobustWifiConnection.java (FIXED)
+│   │   │   ├── NetworkUtils.java
+│   │   │   └── TvDiscovery.java
+│   │   ├── 📁 adapters/
+│   │   │   └── ✅ DeviceAdapter.java (FIXED)
+│   │   ├── 📁 utils/
+│   │   │   ├── ✅ PermissionManager.java (FIXED)
+│   │   │   ├── ✅ SharedPrefsManager.java
+│   │   │   ├── ✅ ErrorHandler.java (NEW)
+│   │   │   └── AnimationUtils.java
+│   │   └── 📁 models/
+│   │       └── TvDevice.java
+│   ├── 📁 res/
+│   │   ├── 📁 layout/
+│   │   │   ├── ✅ activity_main.xml
+│   │   │   ├── ✅ item_tv_device.xml (FIXED)
+│   │   │   └── activity_control.xml
+│   │   ├── 📁 values/
+│   │   │   ├── strings.xml
+│   │   │   ├── colors.xml
+│   │   │   └── styles.xml
+│   │   ├── 📁 xml/
+│   │   │   ├── ✅ network_security_config.xml (FIXED)
+│   │   │   └── usb_device_filter.xml
+│   │   └── 📁 drawable/
+│   │       ├── ic_tv_lg.xml
+│   │       ├── ic_tv_samsung.xml
+│   │       └── cosmic_gradient.xml
+│   └── ✅ AndroidManifest.xml (FIXED)
+├── ✅ build.gradle (FIXED)
+└── ✅ proguard-rules.pro (FIXED)

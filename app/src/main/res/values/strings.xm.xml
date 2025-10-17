@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">ColorControl Universe</string>
+    <string name="quick_connect">เชื่อมต่อด่วน</string>
+    <string name="manual_setup">ตั้งค่าด้วยตนเอง</string>
+    <string name="scan_devices">สแกนหาอุปกรณ์</string>
+    <string name="connection_status">สถานะการเชื่อมต่อ</string>
+    <string name="disconnected">ไม่ได้เชื่อมต่อ</string>
+    <string name="connecting">กำลังเชื่อมต่อ…</string>
+    <string name="connected">เชื่อมต่อแล้ว</string>
+    <string name="error">ข้อผิดพลาด</string>
+    <string name="no_devices_found">ไม่พบอุปกรณ์</string>
+    <string name="scanning_devices">กำลังสแกนหาอุปกรณ์…</string>
+    <string name="wake_tv">ปลุก TV</string>
+    <string name="power">ปุ่มเปิด/ปิด</string>
+    <string name="volume_up">เสียงขึ้น</string>
+    <string name="volume_down">เสียงลง</string>
+    <string name="mute">ปิดเสียง</string>
+    <string name="channel_up">ช่องขึ้น</string>
+    <string name="channel_down">ช่องลง</string>
+    <string name="home">หน้าหลัก</string>
+    <string name="back">ย้อนกลับ</string>
+    <string name="menu">เมนู</string>
+    <string name="settings">ตั้งค่า</string>
+    <string name="about">เกี่ยวกับ</string>
+    <string name="version">เวอร์ชัน %s</string>
+    <string name="device_icon">ไอคอนอุปกรณ์</string>
+    <string name="action_select">เลือก</string>
+    <string name="tv_brand_lg">LG</string>
+    <string name="tv_brand_samsung">Samsung</string>
+    <string name="tv_brand_sony">Sony</string>
+    <string name="connection_type_wifi">WiFi</string>
+    <string name="connection_type_bluetooth">บลูทูธ</string>
+    <string name="connection_type_usb">USB</string>
+    <string name="connection_type_auto">อัตโนมัติ</string>
+</resources>

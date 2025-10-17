@@ -1,0 +1,26 @@
+<resources>
+    <!-- Cosmic Color Palette -->
+    <color name="cosmic_blue">#4FC3F7</color>
+    <color name="cosmic_purple">#7E57C2</color>
+    <color name="cosmic_dark">#1A237E</color>
+    <color name="cosmic_darker">#0D1440</color>
+    
+    <!-- Status Colors -->
+    <color name="connected_green">#4CAF50</color>
+    <color name="connecting_orange">#FF9800</color>
+    <color name="disconnected_red">#F44336</color>
+    <color name="error_red">#D32F2F</color>
+    
+    <!-- Neutral Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray_50">#FAFAFA</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_500">#9E9E9E</color>
+    <color name="gray_800">#424242</color>
+    
+    <!-- Button Colors -->
+    <color name="primary_color">#4FC3F7</color>
+    <color name="primary_dark">#039BE5</color>
+    <color name="accent_color">#7E57C2</color>
+</resources>

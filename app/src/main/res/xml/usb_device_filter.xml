@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- LG TVs -->
+    <usb-device vendor-id="1086" product-id="25491" />
+    <usb-device vendor-id="1086" product-id="25492" />
+    
+    <!-- Samsung TVs -->
+    <usb-device vendor-id="1256" product-id="41042" />
+    <usb-device vendor-id="1256" product-id="41043" />
+    
+    <!-- Sony TVs -->
+    <usb-device vendor-id="1356" product-id="2456" />
+    <usb-device vendor-id="1356" product-id="2457" />
+</resources>

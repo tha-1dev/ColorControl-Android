@@ -1,0 +1,14 @@
+<resources>
+    <string-array name="tv_brands">
+        <item>@string/tv_brand_lg</item>
+        <item>@string/tv_brand_samsung</item>
+        <item>@string/tv_brand_sony</item>
+    </string-array>
+
+    <string-array name="connection_types">
+        <item>@string/connection_type_auto</item>
+        <item>@string/connection_type_wifi</item>
+        <item>@string/connection_type_bluetooth</item>
+        <item>@string/connection_type_usb</item>
+    </string-array>
+</resources>

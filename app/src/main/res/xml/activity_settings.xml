@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@drawable/cosmic_gradient">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Power Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <com.maassoft.colorcontrol.widgets.CosmicButton
+                android:id="@+id/btnPower"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:text="เปิด/ปิด"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cosmicColor1="#FF5252"
+                app:cosmicColor2="#D32F2F"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+
+        <!-- Volume Controls -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ควบคุมเสียง"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnVolumeDown"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="เสียงลง"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="4dp" />
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnMute"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="ปิดเสียง"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp" />
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnVolumeUp"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="เสียงขึ้น"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginStart="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Channel Controls -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ควบคุมช่อง"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnChannelDown"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="ช่องลง"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnChannelUp"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="ช่องขึ้น"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginStart="8dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Navigation Controls -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="การนำทาง"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Directional Pad -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <!-- Up Button -->
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnUp"
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:text="ขึ้น"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <!-- Middle Row -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <com.maassoft.colorcontrol.widgets.CosmicButton
+                            android:id="@+id/btnLeft"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:text="ซ้าย"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <com.maassoft.colorcontrol.widgets.CosmicButton
+                            android:id="@+id/btnOk"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:text="ตกลง"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp" />
+
+                        <com.maassoft.colorcontrol.widgets.CosmicButton
+                            android:id="@+id/btnRight"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:text="ขวา"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:layout_marginStart="8dp" />
+
+                    </LinearLayout>
+
+                    <!-- Down Button -->
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnDown"
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:text="ลง"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Function Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <com.maassoft.colorcontrol.widgets.CosmicButton
+                android:id="@+id/btnHome"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="หน้าหลัก"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_marginEnd="4dp" />
+
+            <com.maassoft.colorcontrol.widgets.CosmicButton
+                android:id="@+id/btnBack"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="ย้อนกลับ"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp" />
+
+            <com.maassoft.colorcontrol.widgets.CosmicButton
+                android:id="@+id/btnMenu"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="เมนู"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_marginStart="4dp" />
+
+        </LinearLayout>
+
+        <!-- Number Pad -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ป้อนหมายเลข"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Number Grid -->
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:columnCount="3"
+                    app:rowCount="4">
+
+                    <!-- Row 1 -->
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnNum1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1"
+                        app:layout_gravity="fill" />
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnNum2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:text="2"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1"
+                        app:layout_gravity="fill" />
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnNum3"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:text="3"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1"
+                        app:layout_gravity="fill" />
+
+                    <!-- Row 2 -->
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnNum4"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:text="4"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1"
+                        app:layout_gravity="fill" />
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnNum5"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:text="5"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1"
+                        app:layout_gravity="fill" />
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnNum6"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:text="6"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1"
+                        app:layout_gravity="fill" />
+
+                    <!-- Row 3 -->
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnNum7"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:text="7"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1"
+                        app:layout_gravity="fill" />
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnNum8"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:text="8"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1"
+                        app:layout_gravity="fill" />
+
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnNum9"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:text="9"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1"
+                        app:layout_gravity="fill" />
+
+                    <!-- Row 4 -->
+                    <com.maassoft.colorcontrol.widgets.CosmicButton
+                        android:id="@+id/btnSource"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:text="แหล่ง
