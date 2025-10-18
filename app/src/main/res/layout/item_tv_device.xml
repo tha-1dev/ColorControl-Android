@@ -1,72 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="2dp"
-    android:background="?attr/selectableItemBackground">
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/gray_50"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:gravity="center_vertical">
 
+        <!-- Device Icon (48dp x 48dp) -->
         <ImageView
             android:id="@+id/ivDeviceIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/ic_tv_generic"
             android:contentDescription="@string/device_icon"
-            android:layout_gravity="center_vertical" />
+            app:tint="@color/cosmic_purple"
+            android:layout_marginEnd="16dp" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginStart="16dp"
             android:orientation="vertical">
 
+            <!-- Device Name -->
             <TextView
                 android:id="@+id/tvDeviceName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Device Name"
+                tools:text="Samsung Smart TV QLED 8K"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:ellipsize="end"
                 android:maxLines="1" />
 
+            <!-- Device IP Address -->
             <TextView
                 android:id="@+id/tvDeviceIp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="192.168.1.100"
+                tools:text="IP: 192.168.1.100"
                 android:textSize="14sp"
                 android:textColor="@color/gray_500"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="2dp" />
 
+            <!-- Device Type / Connection Type -->
             <TextView
                 android:id="@+id/tvDeviceType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TV Type"
+                tools:text="ประเภท: Samsung Tizen (WiFi)"
                 android:textSize="12sp"
-                android:textColor="@color/gray_500"
-                android:layout_marginTop="2dp" />
+                android:textColor="@color/cosmic_blue"
+                android:textStyle="italic"
+                android:layout_marginTop="4dp" />
 
         </LinearLayout>
 
+        <!-- Chevron Icon / Action Indicator -->
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_chevron_right"
             android:layout_gravity="center_vertical"
             android:contentDescription="@string/action_select"
-            android:tint="@color/gray_500" />
+            app:tint="@color/primary_color"
+            android:layout_marginStart="8dp" />
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
