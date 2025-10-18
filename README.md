@@ -22,6 +22,7 @@
 - ✅ **LG** (WebOS)
 - ✅ **Samsung** (Tizen)  
 - ✅ **Sony** (BRAVIA)
+- ✅ **Sharp** (AQUOS)
 - ✅ **Panasonic** (VIERA)
 - ✅ **และอื่นๆ** (Generic TV Support)
 
