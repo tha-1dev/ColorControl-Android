@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/cosmic_gradient"
     android:padding="16dp">
 
-    <!-- Connection Status -->
+    <!-- Connection Status Card (Header) -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/connectionStatusCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        android:layout_marginBottom="16dp">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/gray_50">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:gravity="center_vertical">
 
+            <!-- TV Icon (Using a placeholder, the actual one will be set in Java) -->
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/ic_tv_generic"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="12dp" />
+                app:tint="@color/cosmic_purple"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="TV Icon" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -39,9 +45,10 @@
                     android:id="@+id/tvDeviceName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TV Device"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    tools:text="LG OLED TV 65&quot;"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tvConnectionStatus"
@@ -54,76 +61,70 @@
 
             </LinearLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnWakeTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ปลุก"
-                style="@style/Widget.ColorControl.Button.Outlined"
-                android:layout_marginEnd="8dp" />
-
+            <!-- Disconnect Button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDisconnect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ตัดการเชื่อมต่อ"
-                style="@style/Widget.ColorControl.Button.Outlined" />
+                android:textSize="12sp"
+                style="@style/Widget.ColorControl.Button.Secondary"
+                app:icon="@drawable/ic_disconnect_icon_placeholder"
+                app:iconTint="@color/disconnected_red"
+                android:textColor="@color/disconnected_red"
+                app:strokeColor="@color/disconnected_red"
+                android:layout_marginStart="8dp" />
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- Powered By Thai-Dev Footer -->
+    <TextView
+        android:id="@+id/tvFooterControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powered By Thai-Dev"
+        android:textSize="12sp"
+        android:textColor="@color/gray_300"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- TV Remote View -->
+    <!-- ConstraintLayout ถูกปรับเพื่อให้ RemoteView อยู่เหนือ Footer -->
     <com.maassoft.colorcontrol.widgets.TvRemoteView
         android:id="@+id/tvRemoteView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_marginTop="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@drawable/cosmic_dark_card"
+        app:layout_constraintTop_toBottomOf="@id/connectionStatusCard"
+        app:layout_constraintBottom_toTopOf="@id/tvFooterControl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Quick Actions Bar -->
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        android:layout_marginTop="8dp">
+    <!-- Floating Wake Button (for quick access when TV is off, can be hidden/shown by Java) -->
+    <com.maassoft.colorcontrol.widgets.CosmicButton
+        android:id="@+id/btnWakeTv"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="ปลุก"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        app:cosmicColor1="#4FC3F7"
+        app:cosmicColor2="#7E57C2"
+        app:cornerRadius="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvFooterControl"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="12dp"
+        android:elevation="12dp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:stateListAnimator="@null" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp">
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="เสียงขึ้น"
-                style="@style/Widget.ColorControl.Button.Outlined"
-                android:drawableStart="@drawable/ic_volume_up"
-                android:layout_marginEnd="4dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="เสียงลง"
-                style="@style/Widget.ColorControl.Button.Outlined"
-                android:drawableStart="@drawable/ic_volume_down"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="ปิดเสียง"
-                style="@style/Widget.ColorControl.Button.Outlined"
-                android:drawableStart="@drawable/ic_mute"
-                android:layout_marginStart="4dp" />
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
