@@ -11,28 +11,29 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Connection Type Selection -->
+        <!-- Header: Connection Type Selection -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/gray_50"
             android:layout_marginBottom="24dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="เลือกวิธีเชื่อมต่อ"
-                    android:textSize="20sp"
+                    android:text="เลือกวิธีการเชื่อมต่อหลัก"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:layout_marginBottom="16dp" />
+                    android:layout_marginBottom="12dp" />
 
                 <com.google.android.material.button.MaterialButtonToggleGroup
                     android:id="@+id/connectionToggle"
@@ -40,17 +41,19 @@
                     android:layout_height="wrap_content"
                     app:singleSelection="true"
                     app:selectionRequired="true"
-                    app:checkedButton="@+id/btnAuto">
+                    app:checkedButton="@+id/btnAuto"
+                    app:strokeColor="@color/primary_color">
 
+                    <!-- Note: The existing styles are retained for functionality -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnAuto"
                         style="@style/Widget.ColorControl.Button.Outlined"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="อัตโนมัติ"
-                        android:drawableStart="@drawable/ic_auto_connect"
-                        android:drawableTint="@color/primary_color" />
+                        android:text="@string/connection_type_auto"
+                        app:icon="@drawable/ic_auto_connect"
+                        app:iconTint="@color/primary_color" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnWifi"
@@ -58,9 +61,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="WiFi"
-                        android:drawableStart="@drawable/ic_wifi"
-                        android:drawableTint="@color/primary_color" />
+                        android:text="@string/connection_type_wifi"
+                        app:icon="@drawable/ic_wifi"
+                        app:iconTint="@color/primary_color" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnBluetooth"
@@ -68,9 +71,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="บลูทูธ"
-                        android:drawableStart="@drawable/ic_bluetooth"
-                        android:drawableTint="@color/primary_color" />
+                        android:text="@string/connection_type_bluetooth"
+                        app:icon="@drawable/ic_bluetooth"
+                        app:iconTint="@color/primary_color" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnUsb"
@@ -78,9 +81,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="USB"
-                        android:drawableStart="@drawable/ic_usb"
-                        android:drawableTint="@color/primary_color" />
+                        android:text="@string/connection_type_usb"
+                        app:icon="@drawable/ic_usb"
+                        app:iconTint="@color/primary_color" />
 
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -93,7 +96,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/gray_50">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -104,8 +108,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ตั้งค่าด้วยตนเอง"
-                    android:textSize="20sp"
+                    android:text="ตั้งค่าการเชื่อมต่อด้วยตนเอง"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:layout_marginBottom="16dp" />
@@ -117,13 +121,13 @@
                     android:layout_marginBottom="16dp"
                     style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     app:startIconDrawable="@drawable/ic_tv_generic"
-                    app:startIconTint="@color/primary_color">
+                    app:startIconTint="@color/cosmic_blue">
 
                     <AutoCompleteTextView
                         android:id="@+id/autoCompleteTvBrand"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="ยี่ห้อทีวี"
+                        android:hint="ยี่ห้อทีวี (LG, Samsung, Sony...)"
                         android:inputType="none" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -135,58 +139,63 @@
                     android:layout_marginBottom="16dp"
                     style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     app:startIconDrawable="@drawable/ic_wifi"
-                    app:startIconTint="@color/primary_color">
+                    app:startIconTint="@color/cosmic_blue">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etIpAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="IP Address"
+                        android:hint="IP Address (192.168.x.x)"
                         android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- MAC Address Input -->
+                <!-- MAC Address Input (Optional) -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="32dp"
                     style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     app:startIconDrawable="@drawable/ic_bluetooth"
-                    app:startIconTint="@color/primary_color">
+                    app:startIconTint="@color/cosmic_purple">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etMacAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="MAC Address (Optional)"
+                        android:hint="MAC Address (สำหรับ Wake-on-LAN)"
                         android:inputType="textCapCharacters" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Connect Button -->
-                <com.google.android.material.button.MaterialButton
+                <!-- Connect Button - Use CosmicButton for better visual effect -->
+                <com.maassoft.colorcontrol.widgets.CosmicButton
                     android:id="@+id/btnConnect"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:text="เชื่อมต่อ"
+                    android:layout_height="60dp"
+                    android:text="เริ่มการเชื่อมต่อ"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    style="@style/Widget.ColorControl.Button.Primary"
-                    app:icon="@drawable/ic_cosmic_wake"
-                    app:iconGravity="textStart" />
+                    android:textColor="@color/white"
+                    app:cosmicColor1="@color/primary_color"
+                    app:cosmicColor2="@color/accent_color"
+                    app:cornerRadius="16dp"
+                    app:glowColor="#804FC3F7"
+                    app:borderWidth="2dp" />
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Quick Tips -->
+        <!-- Quick Tips (Retained for user guidance) -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
-            android:layout_marginTop="16dp">
+            app:cardBackgroundColor="@color/gray_100"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -197,21 +206,35 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="คำแนะนำ"
+                    android:text="คำแนะนำในการเชื่อมต่อ"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:layout_marginBottom="8dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="• เลือก 'อัตโนมัติ' เพื่อค้นหาทีวีอัตโนมัติ\n• ตรวจสอบให้แน่ใจว่าทีวีและมือถืออยู่ในเครือข่ายเดียวกัน\n• สำหรับบลูทูธ ต้องเปิดการมองเห็นอุปกรณ์"
+                    android:text="• เลือก 'อัตโนมัติ' เพื่อให้แอปค้นหาและเลือกวิธีเชื่อมต่อที่ดีที่สุด\n• ตรวจสอบให้แน่ใจว่าทีวีของคุณอนุญาตการควบคุมระยะไกลผ่านเครือข่าย\n• MAC Address ใช้สำหรับฟังก์ชัน Wake-on-LAN เท่านั้น"
                     android:textSize="14sp"
-                    android:lineSpacingExtra="4dp" />
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/gray_800" />
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
+        <!-- Powered By Thai-Dev Footer -->
+        <TextView
+            android:id="@+id/tvFooterConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Powered By Thai-Dev"
+            android:textSize="12sp"
+            android:textColor="@color/gray_300"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
 
     </LinearLayout>
 
